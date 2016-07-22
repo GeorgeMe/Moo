@@ -1,10 +1,10 @@
 package com.is.moo.views.activities;
+
 import android.annotation.TargetApi;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -16,19 +16,17 @@ import android.util.Pair;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.is.moo.R;
+import com.is.moo.entities.Movie;
+import com.is.moo.entities.MoviesWrapper;
 import com.is.moo.mvp.presenters.MoviesPresenter;
 import com.is.moo.mvp.views.MoviesView;
 import com.is.moo.utils.RecyclerInsetsDecoration;
 import com.is.moo.utils.RecyclerViewClickListener;
 import com.is.moo.views.adapters.MoviesAdapter;
 import com.is.moo.views.fragments.NavigationDrawerFragment;
-import com.is.moo.entities.Movie;
-import com.is.moo.entities.MoviesWrapper;
 import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.SnackbarManager;
 
@@ -75,7 +73,7 @@ public class MoviesActivity extends ActionBarActivity implements MoviesView, Rec
         if (savedInstanceState == null){
             if (mMoviesPresenter==null)
             mMoviesPresenter=new MoviesPresenter(getContext(),this);
-            mMoviesPresenter.getPopularMoviesByPage(""+page);
+            mMoviesPresenter.getPopularMoviesByPage(page);
         }else{
             if (mMoviesPresenter==null)
                 mMoviesPresenter=new MoviesPresenter(getContext(),this);
@@ -178,11 +176,11 @@ public class MoviesActivity extends ActionBarActivity implements MoviesView, Rec
 
         Intent movieDetailActivityIntent = new Intent (MoviesActivity.this, MovieDetailActivity.class);
 
-        String movieID = mMoviesAdapter.getMovieList().get(moviePosition).getId();
+        int movieID = mMoviesAdapter.getMovieList().get(moviePosition).getId();
         movieDetailActivityIntent.putExtra(EXTRA_MOVIE_ID, movieID);
-        movieDetailActivityIntent.putExtra(EXTRA_MOVIE_POSITION, moviePosition);
-
-        ImageView mCoverImage = (ImageView) touchedView.findViewById(R.id.item_movie_cover);
+        //movieDetailActivityIntent.putExtra(EXTRA_MOVIE_POSITION, moviePosition);
+        startActivity(movieDetailActivityIntent);
+/*        ImageView mCoverImage = (ImageView) touchedView.findViewById(R.id.item_movie_cover);
         BitmapDrawable bitmapDrawable = (BitmapDrawable) mCoverImage.getDrawable();
 
         if (mMoviesAdapter.isMovieReady(moviePosition) || bitmapDrawable != null) {
@@ -196,7 +194,7 @@ public class MoviesActivity extends ActionBarActivity implements MoviesView, Rec
 
         } else {
             Toast.makeText(this, getString(R.string.activity_movies_message_loading_film),Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 
     private void startDetailActivityByAnimation(View touchedView,
@@ -236,7 +234,7 @@ public class MoviesActivity extends ActionBarActivity implements MoviesView, Rec
             int pastVisibleItems    = ((GridLayoutManager) mRecycler.getLayoutManager()).findFirstVisibleItemPosition();
 
             if((visibleItemCount + pastVisibleItems) >= totalItemCount) {
-                mMoviesPresenter.getPopularMoviesByPage(""+page+1);
+                mMoviesPresenter.getPopularMoviesByPage(page++);
             }
 
             // Is scrolling up

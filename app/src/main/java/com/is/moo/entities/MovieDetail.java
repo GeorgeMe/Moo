@@ -8,170 +8,144 @@ import java.util.List;
 @SuppressWarnings("UnusedDeclaration")
 
 public class MovieDetail {
-    private String backdrop_path;
-    private Belongs_to_collection belongs_to_collection;
-    private String homepage;
-    private String imdb_id;
-    private String original_language;
-    private String original_title;
-    private String overview;
-    private String poster_path;
-    private String release_date;
-    private String status;
-    private String tagline;
+
+    private int count;
+    private int fcount;
+    private int galleryclass;
+    private int id;
+    private String img;
+    private int rcount;
+    private int size;
+    private boolean status;
+    private long time;
     private String title;
-    private List production_countries;
-    private List genres;
-    private List spoken_languages;
-    private List<Production_companies> production_companies;
-    private List<ImagesWrapper.MovieImage> movieImagesList;
-    private Number budget;
-    private Number id;
-    private Number popularity;
-    private Number revenue;
-    private Number runtime;
-    private Number vote_average;
-    private Number vote_count;
-    private boolean adult;
-    private boolean video;
+    private String url;
 
-    public boolean getAdult() {
+    private List<ListBean> list;
 
-        return this.adult;
+    public int getCount() {
+        return count;
     }
 
-    public void setAdult(boolean adult) {
-
-        this.adult = adult;
+    public void setCount(int count) {
+        this.count = count;
     }
 
-    public String getBackdrop_path() {
-
-        return this.backdrop_path;
+    public int getFcount() {
+        return fcount;
     }
 
-    public Belongs_to_collection getBelongs_to_collection() {
-
-        return this.belongs_to_collection;
+    public void setFcount(int fcount) {
+        this.fcount = fcount;
     }
 
-    public Number getBudget() {
-
-        return this.budget;
+    public int getGalleryclass() {
+        return galleryclass;
     }
 
-    public List getGenres() {
-
-        return this.genres;
+    public void setGalleryclass(int galleryclass) {
+        this.galleryclass = galleryclass;
     }
 
-    public String getHomepage() {
-
-        return this.homepage;
+    public int getId() {
+        return id;
     }
 
-    public Number getId() {
-
-        return this.id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getImdb_id() {
-
-        return this.imdb_id;
+    public String getImg() {
+        return img;
     }
 
-    public String getOriginal_language() {
-
-        return this.original_language;
+    public void setImg(String img) {
+        this.img = img;
     }
 
-    public String getOriginal_title() {
-
-        return this.original_title;
+    public int getRcount() {
+        return rcount;
     }
 
-    public String getOverview() {
-
-        return this.overview;
+    public void setRcount(int rcount) {
+        this.rcount = rcount;
     }
 
-    public Number getPopularity() {
-
-        return this.popularity;
+    public int getSize() {
+        return size;
     }
 
-    public String getPoster_path() {
-
-        return this.poster_path;
+    public void setSize(int size) {
+        this.size = size;
     }
 
-    public List<Production_companies> getProduction_companies() {
-
-        return this.production_companies;
+    public boolean isStatus() {
+        return status;
     }
 
-    public List getProduction_countries() {
-
-        return this.production_countries;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
-    public String getRelease_date() {
-
-        return this.release_date;
+    public long getTime() {
+        return time;
     }
 
-    public Number getRevenue() {
-
-        return this.revenue;
-    }
-
-    public Number getRuntime() {
-
-        return this.runtime;
-    }
-
-    public List getSpoken_languages() {
-
-        return this.spoken_languages;
-    }
-
-    public String getStatus() {
-
-        return this.status;
-    }
-
-    public String getTagline() {
-
-        return this.tagline;
+    public void setTime(long time) {
+        this.time = time;
     }
 
     public String getTitle() {
-
-        return this.title;
+        return title;
     }
 
-    public boolean getVideo() {
-
-        return this.video;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public Number getVote_average() {
-
-        return this.vote_average;
+    public String getUrl() {
+        return url;
     }
 
-    public Number getVote_count() {
-
-        return this.vote_count;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public void setMovieImagesList(List<ImagesWrapper.MovieImage> movieImagesList) {
-
-        this.movieImagesList = movieImagesList;
+    public List<ListBean> getList() {
+        return list;
     }
 
-    public List<ImagesWrapper.MovieImage> getMovieImagesList() {
+    public void setList(List<ListBean> list) {
+        this.list = list;
+    }
 
-        return movieImagesList;
+    public static class ListBean {
+        private int gallery;
+        private int id;
+        private String src;
+
+        public int getGallery() {
+            return gallery;
+        }
+
+        public void setGallery(int gallery) {
+            this.gallery = gallery;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getSrc() {
+            return src;
+        }
+
+        public void setSrc(String src) {
+            this.src = src;
+        }
     }
 }

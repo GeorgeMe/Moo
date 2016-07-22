@@ -39,4 +39,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     // snackbar
     compile 'com.nispok:snackbar:2.9.1'
+    compile 'ca.gcastle:BottomNavigation:1.0.0'
 }

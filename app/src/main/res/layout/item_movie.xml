@@ -4,17 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/item_movie_width"
     android:layout_height="@dimen/item_movie_height"
-    android:clipChildren="false"
-
-    >
-
+    android:clipChildren="false">
     <ImageView
         android:id="@+id/item_movie_cover"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/movie_placeholder"
-        android:scaleType="centerCrop"
-        />
+        android:scaleType="centerCrop"/>
 
     <com.is.moo.custom.views.LobsterTextView
         android:id="@+id/item_movie_title"
@@ -31,7 +27,6 @@
         android:layout_gravity="bottom"
         android:gravity="bottom"
         tools:text="Avengers"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp"/>
 
 </FrameLayout>

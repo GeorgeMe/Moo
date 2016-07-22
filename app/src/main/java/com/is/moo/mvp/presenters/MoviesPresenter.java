@@ -30,19 +30,19 @@ public class MoviesPresenter implements BaseSingleLoadedListener<MoviesWrapper> 
         mMoviesView.hideLoading();
         mMoviesView.hideActionLabel();
         if (mMoviesView.isTheListEmpty()) {
-            mMoviesView.showMovies(moviesWrapper.getResults());
+            mMoviesView.showMovies(moviesWrapper.getTngou());
         } else {
-            mMoviesView.appendMovies(moviesWrapper.getResults());
+            mMoviesView.appendMovies(moviesWrapper.getTngou());
         }
     }
 
-    public void getPopularMoviesByPage(String page){
+    public void getPopularMoviesByPage(int page){
         mMoviesView.showLoading();
         mMoviesView.showLoadingLabel();
         JSONObject json=new JSONObject();
         try {
-            json.put("apikey",Constants.API_KEY);
             json.put("page",page);
+            json.put("rows",20);
         }catch (JSONException j){
             mMoviesView.hideLoading();
             mMoviesView.hideActionLabel();
@@ -61,9 +61,9 @@ public class MoviesPresenter implements BaseSingleLoadedListener<MoviesWrapper> 
         mMoviesView.hideLoading();
         mMoviesView.hideActionLabel();
         if (mMoviesView.isTheListEmpty()) {
-            mMoviesView.showMovies(moviesWrapper.getResults());
+            mMoviesView.showMovies(moviesWrapper.getTngou());
         } else {
-            mMoviesView.appendMovies(moviesWrapper.getResults());
+            mMoviesView.appendMovies(moviesWrapper.getTngou());
         }
     }
 

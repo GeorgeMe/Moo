@@ -10,7 +10,7 @@ public class TLog {
     /**
      * This flag to indicate the log is enabled or disabled.
      */
-    private static boolean isLogEnable = false;
+    private static boolean isLogEnable = true;
 
     /**
      * Disable the log output.

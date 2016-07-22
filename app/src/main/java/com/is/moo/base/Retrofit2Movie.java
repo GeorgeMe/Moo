@@ -29,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class Retrofit2Movie {
 
-    protected String baseUrl="http://api.themoviedb.org/";
+    protected String baseUrl="http://www.tngou.net/";
     protected Retrofit retrofit;
     protected MovieAPI movieAPI;
     private static  Context mContext = null;

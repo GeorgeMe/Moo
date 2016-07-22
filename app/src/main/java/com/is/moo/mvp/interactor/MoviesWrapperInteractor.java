@@ -6,6 +6,7 @@ import com.is.moo.entities.MoviesWrapper;
 import com.is.moo.base.Retrofit2Movie;
 import com.is.moo.mvp.listeners.BaseSingleLoadedListener;
 import com.is.moo.mvp.listeners.CommonSingleInteractor;
+import com.is.moo.utils.TLog;
 
 import org.json.JSONObject;
 
@@ -27,7 +28,7 @@ public class MoviesWrapperInteractor  extends Retrofit2Movie implements CommonSi
 
     @Override
     public void getCommonSingleData(JSONObject json) {
-        Call<MoviesWrapper> call = movieAPI.getPopularMoviesByPage(json.optString("apikey"),json.optString("page"));
+        Call<MoviesWrapper> call = movieAPI.getPopularMoviesByPage(json.optInt("page"),json.optInt("rows"));
         call.enqueue(new Callback<MoviesWrapper>() {
             @Override
             public void onResponse(Call<MoviesWrapper> call, Response<MoviesWrapper> response) {

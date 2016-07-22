@@ -2,7 +2,6 @@ package com.is.moo.views.adapters;
 import android.content.Context;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -10,10 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.is.moo.R;
-import com.is.moo.utils.RecyclerViewClickListener;
-import com.is.moo.entities.Movie;
 import com.is.moo.Constants;
+import com.is.moo.R;
+import com.is.moo.entities.Movie;
+import com.is.moo.utils.RecyclerViewClickListener;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -61,8 +60,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             holder.coverImageView.setTransitionName("cover" + position);
 
-        String posterURL = Constants.BASIC_STATIC_URL + selectedMovie.getPoster_path();
-        Log.e(MoviesAdapter.class.getSimpleName(),posterURL);
+        String posterURL = Constants.BASIC_STATIC_URL + selectedMovie.getImg();
+        //Log.e(MoviesAdapter.class.getSimpleName(),posterURL);
         Picasso.with(mContext)
                 .load(posterURL)
                 .fit().centerCrop()
@@ -70,7 +69,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
                     @Override
                     public void onSuccess() {
 
-                        mMovieList.get(position).setMovieReady(true);
+                        //mMovieList.get(position).setMovieReady(true);
                     }
 
                     @Override
@@ -82,7 +81,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
 
     public boolean isMovieReady(int position) {
 
-        return mMovieList.get(position).isMovieReady();
+        //return mMovieList.get(position).isMovieReady();
+        return true;
     }
 
     @Override

@@ -7,8 +7,7 @@
     android:textStyle="italic"
     android:visibility="visible"
     style="@style/MaterialMoviesDetailField"
-    tools:text="@string/lorem"
-    />
+    tools:text="@string/lorem"/>
 
 
 

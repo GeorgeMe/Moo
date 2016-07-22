@@ -5,6 +5,7 @@
     android:background="@color/theme_primary"
     android:clickable="true"
     android:focusable="true"
+    android:name="com.is.moo.views.fragments.NavigationDrawerFragment"
     android:focusableInTouchMode="true"
     android:orientation="vertical">
 

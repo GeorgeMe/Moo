@@ -7,7 +7,7 @@ public class Constants {
     public static final String API_KEY = "0b6ac64c50e69688ce062d2faabedbf4";
 	
     public static final String MOVIE_DB_HOST = "http://api.themoviedb.org/3/";
-    public static String BASIC_STATIC_URL = "";
+    public static String BASIC_STATIC_URL = "http://tnfs.tngou.net/img";
     public static String Cookie = "";
     public static String SEE_COOKIE = "cookie";
 }

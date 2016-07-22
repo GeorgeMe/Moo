@@ -8,84 +8,85 @@ import java.io.Serializable;
 
 @SuppressWarnings("UnusedDeclaration")
 public class Movie implements Serializable {
-
-    private String adult;
-    private String backdrop_path;
-    private String id;
-    private String original_title;
-    private String release_date;
-    private String poster_path;
-    private String popularity;
+    private int count;
+    private int fcount;
+    private int galleryclass;
+    private int id;
+    private String img;
+    private int rcount;
+    private int size;
+    private long time;
     private String title;
-    private String vote_average;
-    private String vote_count;
-    private String overview;
-    private boolean movieReady;
 
-    public Movie(String id, String title, String overview) {
-
-        this.id = id;
-        this.title = title;
-        this.overview = overview;
+    public int getCount() {
+        return count;
     }
 
-    public String getAdult() {
-
-        return adult;
+    public void setCount(int count) {
+        this.count = count;
     }
 
-    public String getBackdrop_path() {
-
-        return backdrop_path;
+    public int getFcount() {
+        return fcount;
     }
 
-    public String getId() {
+    public void setFcount(int fcount) {
+        this.fcount = fcount;
+    }
 
+    public int getGalleryclass() {
+        return galleryclass;
+    }
+
+    public void setGalleryclass(int galleryclass) {
+        this.galleryclass = galleryclass;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public String getOriginal_title() {
-
-        return original_title;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getRelease_date() {
-
-        return release_date;
+    public String getImg() {
+        return img;
     }
 
-    public String getPoster_path() {
-
-        return poster_path;
+    public void setImg(String img) {
+        this.img = img;
     }
 
-    public String getPopularity() {
+    public int getRcount() {
+        return rcount;
+    }
 
-        return popularity;
+    public void setRcount(int rcount) {
+        this.rcount = rcount;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
     }
 
     public String getTitle() {
-
         return title;
     }
 
-    public String getVote_average() {
-
-        return vote_average;
-    }
-
-    public String getVote_count() {
-
-        return vote_count;
-    }
-
-    public void setMovieReady(boolean movieReady) {
-
-        this.movieReady = movieReady;
-    }
-
-    public boolean isMovieReady() {
-
-        return movieReady;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
